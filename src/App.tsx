@@ -1,17 +1,16 @@
 import './App.css'
-import ButtonUsage from './components/ButtonUsage';
 import ActionAreaCard from './components/Card';
-
+import satelliteData from './service/SatelliteData';
+import { ISatellite } from './types/ISatelliteData';
 function App() {
 
 
   return (
     <>
-      <ButtonUsage/>  
-      {[1,2,3].map((item)=>{
-        return (<ActionAreaCard/>)
+      <h1>Satellite Tracking System</h1>
+      {satelliteData?.map((satellite: ISatellite) => {
+        return (<ActionAreaCard name={satellite.name} purpose={satellite.purpose} />)
       })}
-
     </>
   )
 }
