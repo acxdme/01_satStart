@@ -8,8 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export default function ActionAreaCard(props: any) {
     const navigate = useNavigate();
     const handleCardAction = (name: string) => {
-        console.log("name", name)
-        navigate("/details");
+        navigate("/details", { state: { Name: name } });
     }
 
     return (
