@@ -51,6 +51,16 @@ const satelliteData: ISatellite[] = [
         purpose: "Astronomy",
         status: "Operational",
     },
+    {
+        id: "c6a6a446-2b95-45f4-bf3b-3eae189c1dbd",
+        name: "INED",
+        description: "India's first education and research satellite.",
+        nomad_id: "ISRO-006",
+        orbit_type: "Low Earth Orbit",
+        launch_date: "2015-10-02",
+        purpose: "Educational",
+        status: "Operational",
+    },
 ];
 
 export default satelliteData;

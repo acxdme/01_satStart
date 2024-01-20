@@ -9,7 +9,7 @@ function App() {
       <h1 className='text-3xl font-serif font-semibold p-4'>Satellite Tracking System</h1>
       <div className='grid grid-cols-3 gap-4'>
         {satelliteData?.map((satellite: ISatellite) => {
-          return (<ActionAreaCard name={satellite.name} purpose={satellite.purpose} />)
+          return (<ActionAreaCard key={satellite.id} name={satellite.name} purpose={satellite.purpose} />)
         })}
       </div>
     </>

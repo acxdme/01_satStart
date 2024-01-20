@@ -3,12 +3,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-
-const handleCardAction = (name: string) => {
-    console.log(`${name} satellite clicked!`)
-}
+import { useNavigate } from 'react-router-dom';
 
 export default function ActionAreaCard(props: any) {
+    const navigate = useNavigate();
+    const handleCardAction = (name: string) => {
+        console.log("name", name)
+        navigate("/details");
+    }
+
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea onClick={() => { handleCardAction(props.name) }}>
@@ -23,7 +26,6 @@ export default function ActionAreaCard(props: any) {
                         {props.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {props.purpose}
                     </Typography>
                 </CardContent>
             </CardActionArea>
