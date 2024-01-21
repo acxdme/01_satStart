@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import ButtonUsage from "./ButtonUsage";
 import "../styles/backButton.css";
-import DataTable from "./DataGrid";
+import DataGrid from "./DataGrid";
 
 function Details() {
 
@@ -14,7 +14,7 @@ function Details() {
         <ButtonUsage buttonText={"Back"} />
       </div>
       <div className={"data-grid"}>
-        <DataTable />
+        <DataGrid  satelliteData={location?.state?.data}/>
       </div>
     </>
   )

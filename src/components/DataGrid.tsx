@@ -6,22 +6,21 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(
-    name: string,
-    calories: number,
-) {
-    return { name, calories };
+function createData(property: string, value: string) {
+    return { property, value };
 }
 
-const rows = [
-    createData('Frozen yoghurt', 159),
-    createData('Ice cream sandwich', 237),
-    createData('Eclair', 262),
-    createData('Cupcake', 305),
-    createData('Gingerbread', 356),
-];
 
-export default function DataTable() {
+
+export default function DataGrid(props: any) {
+    const rows = [
+        createData('nomad_id', props?.satelliteData?.nomad_id),
+        createData('description', props?.satelliteData?.description),
+        createData('orbit_type', props?.satelliteData?.orbit_type),
+        createData('purpose', props?.satelliteData?.purpose),
+        createData('status', props?.satelliteData?.status),
+    ];
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -34,14 +33,13 @@ export default function DataTable() {
                 <TableBody>
                     {rows.map((row) => (
                         <TableRow
-                            key={row.name}
+                            key={row.property}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                             <TableCell component="th" scope="row">
-                                {row.name}
+                                {row.property}
                             </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-
+                            <TableCell align="right">{row.value}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

@@ -7,13 +7,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function ActionAreaCard(props: any) {
     const navigate = useNavigate();
-    const handleCardAction = (name: string) => {
-        navigate("/details", { state: { Name: name } });
+    const handleCardAction = (props: any) => {
+        navigate("/details", { state: { Name: props.name , data : props.satelliteData } });
     }
 
     return (
         <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea onClick={() => { handleCardAction(props.name) }}>
+            <CardActionArea onClick={() => { handleCardAction(props) }}>
                 <CardMedia
                     component="img"
                     height="100"
