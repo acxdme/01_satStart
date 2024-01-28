@@ -4,7 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-
+import satImage  from "../../public/Images/sat1.jpg"
 export default function ActionAreaCard(props: any) {
     const navigate = useNavigate();
     const handleCardAction = (props: any) => {
@@ -17,7 +17,7 @@ export default function ActionAreaCard(props: any) {
                 <CardMedia
                     component="img"
                     height="100"
-                    image="https://th.bing.com/th/id/OIP.iY8_k7Im5JfkLqqzjaszFwHaEs?w=307&h=194&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+                    image={satImage}
                     alt="Satellite"
                 />
                 <CardContent>
