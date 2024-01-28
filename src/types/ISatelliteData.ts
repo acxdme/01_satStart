@@ -7,5 +7,6 @@ export interface ISatellite {
     launch_date: string;
     purpose: string;
     status: string;
+    image : any;
 };
 
