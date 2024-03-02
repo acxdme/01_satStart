@@ -97,10 +97,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const iconMapping = [
-    <HomeIcon />,
-    <SatelliteAltIcon />,
-    <SettingsIcon />,
-    <HelpIcon />,
+    {icon :  <HomeIcon />,
+     name : "Home"},
+     {icon :  <SatelliteAltIcon />,
+     name : "Satellite"},
+     {icon :  <SettingsIcon />,
+     name : "Settings"},
+     {icon :  <HelpIcon />,
+     name : "Help"},
 ];
 
 function MiniDrawer() {
@@ -163,9 +167,9 @@ function MiniDrawer() {
                                             justifyContent: 'center',
                                         }}
                                     >
-                                        {item}
+                                        {item.icon}
                                     </ListItemIcon>
-                                    <ListItemText primary={"icon"} sx={{ opacity: open ? 1 : 0 }} />
+                                    <ListItemText primary={item.name} sx={{ opacity: open ? 1 : 0 }} />
                                 </ListItemButton>
                             </ListItem>
                         </Link>
